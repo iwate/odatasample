@@ -21,8 +21,34 @@ namespace ODataSample.V8.Controllers
             return Ok(Data);
         }
 
+        [Route("/Data({Key1},{Key2})")]
+        public IActionResult GetOne1(long Key1, string Key2)
+        {
+            var entity = Data.FirstOrDefault(d => d.Key1 == Key1 && d.Key2 == Key2);
+
+            if (entity == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(entity);
+        }
+
         [Route("/Data(Key1={Key1},Key2={Key2})")]
-        public IActionResult GetOne(long Key1, string Key2)
+        public IActionResult GetOne2(long Key1, string Key2)
+        {
+            var entity = Data.FirstOrDefault(d => d.Key1 == Key1 && d.Key2 == Key2);
+
+            if (entity == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(entity);
+        }
+
+        [Route("/Data(Key2={Key2},Key1={Key1})")]
+        public IActionResult GetOne3(long Key1, string Key2)
         {
             var entity = Data.FirstOrDefault(d => d.Key1 == Key1 && d.Key2 == Key2);
 
