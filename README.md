@@ -5,6 +5,7 @@ Then, I found v8.x doesn't support ways v7.x allows.
 
 ## Test data
 
+https://github.com/iwate/odatasample/blob/9eda6b3ceb81e26524fb392a7fd3943799ca477d/ODataSample.Tests.V7/UnitTest1.cs#L16-L27
 
 ## Test Result
 
